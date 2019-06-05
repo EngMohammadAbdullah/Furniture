@@ -1,0 +1,35 @@
+[
+  {
+
+    "Name": "Mohamed",
+    "LastName": "Abdullah",
+    "PhoneNumber": "0465134255",
+    "Email": "alkaser314@gmail.com",
+    "Address": {
+      "Country": "Belgium",
+      "StreetName": "Oeverstraat",
+      "StreetNo": "70",
+      "PostCode": "9140",
+      "City": "Temse"
+    }
+
+
+  },
+  {
+
+    "Name": "Heba",
+    "LastName": "Taataa",
+    "PhoneNumber": "0464932693",
+    "Email": "Hebataataa@gmail.com",
+    "Address": {
+      "Country": "Belgium",
+      "StreetName": "Oeverstraat",
+      "StreetNo": "70",
+      "PostCode": "9140",
+      "City": "Temse"
+    }
+
+
+  }
+
+]

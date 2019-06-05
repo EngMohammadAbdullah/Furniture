@@ -1,0 +1,6 @@
+C:\Users\Mohammad\source\repos\Furniture\Application\bin\Debug\Application.dll
+C:\Users\Mohammad\source\repos\Furniture\Application\bin\Debug\Application.pdb
+C:\Users\Mohammad\source\repos\Furniture\Application\obj\Debug\Application.csprojAssemblyReference.cache
+C:\Users\Mohammad\source\repos\Furniture\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\source\repos\Furniture\Application\obj\Debug\Application.dll
+C:\Users\Mohammad\source\repos\Furniture\Application\obj\Debug\Application.pdb
