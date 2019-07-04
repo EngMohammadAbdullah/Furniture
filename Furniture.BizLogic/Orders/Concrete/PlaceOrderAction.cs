@@ -86,7 +86,7 @@ namespace Furniture.BizLogic.Orders.Concrete
                         ItemPrice = item.Price,
                         Color = item.Color,
                         Height = item.Height,
-                        Width = item.width,
+                        Width = item.Width,
                         NumItems = lineItem.NumItems,
                         ItemKey = item.Key
                     });

@@ -21,6 +21,11 @@ namespace Furniture.Services.CheckoutServices.Concrete
         public Guid EmployeeKey { get; private set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public Guid CutomerKey { get; private set; }
+
+        /// <summary>
         /// This returns the line items in the order they were places
         /// </summary>
         public ImmutableList<OrderLineItem> LineItems =>
@@ -42,6 +47,14 @@ namespace Furniture.Services.CheckoutServices.Concrete
             _lineItems.Add(newItem);
         }
 
+        public void AddCustomer(Guid customerKey)
+        {
+            this.CutomerKey = customerKey;
+        }
+        public void UpdateCustomer(Guid customerKey)
+        {
+            this.CutomerKey = customerKey;
+        }
         public void UpdateLineItem(int itemIndex, OrderLineItem replacement)
         {
             if (itemIndex < 0 || itemIndex > _lineItems.Count)
@@ -69,7 +82,7 @@ namespace Furniture.Services.CheckoutServices.Concrete
             sb.Append(EmployeeKey.ToString("N"));
             foreach (var lineItem in _lineItems)
             {
-                sb.AppendFormat(",{0},{1}", lineItem.SelectedItem.Key, lineItem.NumItems);
+                sb.AppendFormat(",{0},{1}", lineItem.SelectedItem, lineItem.NumItems);
             }
             return sb.ToString();
         }

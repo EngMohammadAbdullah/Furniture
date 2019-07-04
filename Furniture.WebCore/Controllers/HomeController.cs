@@ -23,10 +23,16 @@ namespace Furniture.WebCore.Controllers
         {
             var listService = new ListCustomersService(_context);
             var customerList = listService.SortFilterPage(options).ToList();
-           
+
             return View(new CustomerListCombinedDto(options, customerList));
         }
 
+        public JsonResult GetFilterSearchContent(SortFilterPageOptions options)
+        {
+            var service = new CustomerFilterDropdownService(_context);
+            return Json(service.GetFilterDropDownValues(options.FilterBy));
+
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

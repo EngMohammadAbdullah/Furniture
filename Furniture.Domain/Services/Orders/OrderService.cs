@@ -40,7 +40,7 @@ namespace Furniture.Domain.Services.Orders
             var added = true;
             foreach (var item in items)
             {
-                item.OrderKey = order.Key;
+                //  item.OrderKey = order.Key;
                 added = _itemRepository.Add(item);
             }
             _itemRepository.Save();

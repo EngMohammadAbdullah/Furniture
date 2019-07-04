@@ -10,10 +10,11 @@ namespace Furniture.Services.ItemServices
     {
 
         public Guid ItemKey { get; set; }
-        public String ItemColor { get; set; }
-        public decimal  Price { get; set; }
+        public string Name { get; set; }
+        public string ItemColor { get; set; }
+        public decimal Price { get; set; }
         public double Width { get; set; }
         public double Height { get; set; }
-   
+
     }
 }

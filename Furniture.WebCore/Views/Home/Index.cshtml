@@ -4,6 +4,7 @@
 @using Furniture.Services.CustomerServices.QueryObjects
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <form id="sort-filter-form" class="form-horizontal">
@@ -13,22 +14,30 @@
             <select asp-for="SortFilterPageData.OrderByOptions" name="OrderByOptions"
                     asp-items="Html.GetEnumSelectList<OrderCustomersByOptions>()"
                     class="form-control sort-filter-width"
-                    onchange="BookList.sendForm(this)"></select>
+                    onchange="customerList.sendForm(this)"></select>
         </div>
         <div class="col-sm-3">
             <label class="control-label">Filter Type</label>
             <select asp-for="SortFilterPageData.FilterBy" name="FilterBy"
                     asp-items="Html.GetEnumSelectList<CustomesFiltersBy>()"
                     class="form-control sort-filter-width"
-                    onchange="BookList.filterByHasChanged(this)"></select>
+                    onchange="customerList.searchByCustomerName(this)"></select>
         </div>
+        <div class="col-sm-3">
+            <label class="control-label">Search By</label>
+            <div>
+                <input asp-for="SortFilterPageData.FilterValue" name="filterValue"
+                       onkeyup="customerList.searchByCustomerName(this)"
+                       class="form-control page-control-width page-num-input">
+                <span class="num-pages-text">    @Model.SortFilterPageData.FilterValue</span>
+            </div>
+        </div>
+        <br />
         <div class="col-sm-3 dim-filter-value" id="filter-value-group">
             <label class="control-label">Filter By</label>
             <select asp-for="SortFilterPageData.FilterValue" name="FilterValue"
-                    id="filter-value-dropdown"
-                    class="form-control sort-filter-width"
-                    disabled
-                    onchange="BookList.sendForm(this)">
+                    id="filter-value-customerName"
+                    class="form-control sort-filter-width">
                 <option>Select filter type...</option>
             </select>
         </div>
@@ -37,7 +46,7 @@
             <div>
                 <input asp-for="SortFilterPageData.PageNum" name="PageNum"
                        class="form-control page-control-width page-num-input"
-                       onchange="BookList.sendForm(this)">
+                       onchange="customerList.sendForm(this)">
                 <span class="num-pages-text">of @Model.SortFilterPageData.NumPages</span>
             </div>
         </div>
@@ -46,10 +55,47 @@
             <select asp-for="SortFilterPageData.PageSize" name="PageSize"
                     asp-items="Model.SortFilterPageData.PageSizes.Select(x => new SelectListItem {Text = x.ToString(), Value = x.ToString()})"
                     class="form-control page-control-width"
-                    onchange="BookList.sendForm(this)"></select>
+                    onchange="customerList.sendForm(this)"></select>
         </div>
     </div>
     <input id="PrevCheckState" name="PrevCheckState" type="hidden" value=@Model.SortFilterPageData.PrevCheckState>
     @*@Html.Hidden("PrevCheckState", @Model.SortFilterPageData.PrevCheckState) -- this didn't work for some reason*@
+    <input type="submit" name="name" value="filter" />
 </form>
 <br />
+
+<table>
+    @foreach (var item in Model.CustomersList)
+    {
+        <tr>
+            <td>
+                <h3>@Html.DisplayFor(modelItem => item.FisrtName)</h3>
+                <div>
+                    @Html.DisplayFor(m => item.LastName)
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    @Html.ActionLink("Choose Items", "ChooseCustomer", "Customers",
+                   new {customerKey = item.CustomerKey})
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded",
+
+        function (event) {
+            customerList.initialise('@Model.SortFilterPageData.FilterBy',
+                '@Model.SortFilterPageData.FilterValue',
+                '@Url.Action("GetFilterSearchContent")' )
+        })
+    </script>
+}

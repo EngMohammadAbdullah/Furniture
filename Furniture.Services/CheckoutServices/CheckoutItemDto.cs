@@ -10,9 +10,12 @@ namespace Furniture.Services.CheckoutServices
     {
 
         public Guid ItemKey { get; set; }
-        public string ItemCategory { get; set; }
         public string ItemName { get; set; }
         public string ImageUrl { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
+        public decimal Price { get; set; }
+
         public short NumOfItems { get; set; }
         public string CustomerName { get; set; }
 

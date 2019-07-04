@@ -66,6 +66,7 @@ namespace Furniture.WebCore
                 {
                     try
                     {
+                        
                         context.DevelopmentEnsureCreated();
                         context.SeedDatabase(GetWwwRootPath());
                     }

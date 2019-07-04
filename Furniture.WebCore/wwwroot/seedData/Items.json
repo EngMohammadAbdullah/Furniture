@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Chair",
+    "Height": 45,
+    "Width": 30,
+    "Color": "Red",
+    "Price": 45.0
+  },
+  {
+    "Name": "Table",
+    "Height": 45,
+    "Width": 30,
+    "Color": "Green",
+    "Price": 45.0
+  },
+  {
+    "Name": "Lamb",
+    "Height": 45,
+    "Width": 30,
+    "Color": "Blue",
+    "Price": 45.0
+  }
+]

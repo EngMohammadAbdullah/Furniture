@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Furniture.Services.ItemServices.QueryObjects
 {
 
-    public enum OrderByOptions
+    public enum OrderItemsByOptions
     {
         [Display(Name = "sort by...")]
         SimpleOrder = 0,
@@ -22,22 +22,22 @@ namespace Furniture.Services.ItemServices.QueryObjects
 
     public static class ItemListDtoSort
     {
-        public static IQueryable<ItemListDto> OrderBooksBy
+        public static IQueryable<ItemListDto> OrderItemssBy
            (this IQueryable<ItemListDto> books,
-            OrderByOptions orderByOptions)
+            OrderItemsByOptions orderByOptions)
         {
             switch (orderByOptions)
             {
-                case OrderByOptions.SimpleOrder:
+                case OrderItemsByOptions.SimpleOrder:
                     return books.OrderByDescending(
                         x => x.ItemKey);
-                case OrderByOptions.ByVotes:
+                case OrderItemsByOptions.ByVotes:
                     return books.OrderByDescending(x =>
                         x.ItemColor);
 
-                case OrderByOptions.ByPriceLowestFirst:
+                case OrderItemsByOptions.ByPriceLowestFirst:
                     return books.OrderBy(x => x.Price);
-                case OrderByOptions.ByPriceHigestFirst:
+                case OrderItemsByOptions.ByPriceHigestFirst:
                     return books.OrderByDescending(
                         x => x.Price);
                 default:

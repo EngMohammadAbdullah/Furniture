@@ -43,7 +43,9 @@ namespace Furniture.DataAccess.Orders
         {
             return _context.Items                      //#D
                 .Where(x => itemIds.Contains(x.Key)) //#D
-                .Include(r => r.CustomerOrder)              //#E
+
+                // .Include(r => r.CustomerOrder)          
+                //#E
                 .ToDictionary(key => key.Key);       //#F
         }
 

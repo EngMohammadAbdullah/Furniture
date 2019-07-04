@@ -8,9 +8,9 @@ namespace Furniture.Services.CheckoutServices.Concrete
 {
     public class CheckoutCookie : CookieTemplate
     {
-        public const string CheckoutCookieName = "EfCoreInAction-Checkout";
+        public const string CheckoutCookieName = "Furniture-Order";
 
-        public CheckoutCookie(IRequestCookieCollection cookiesIn, IResponseCookies cookiesOut = null) 
+        public CheckoutCookie(IRequestCookieCollection cookiesIn, IResponseCookies cookiesOut = null)
             : base(CheckoutCookieName, cookiesIn, cookiesOut)
         {
         }

@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace Furniture.Services.ItemServices
 {
-   public  class ItemListCombinedDto
+    public class ItemListCombinedDto
     {
-        public ItemListCombinedDto(PaginatedList<ItemListDto> sortFilterPageData, IEnumerable<ItemListDto> itemsList)
+        public ItemListCombinedDto(SortFilterItemsOptions sortFilterPageData, IEnumerable<ItemListDto> itemssList)
         {
             SortFilterPageData = sortFilterPageData;
-            ItemsList = itemsList;
+            ItemsList = itemssList;
         }
 
-        public PaginatedList<ItemListDto> SortFilterPageData { get; private set; }
-
+        public SortFilterItemsOptions SortFilterPageData { get; private set; }
         public IEnumerable<ItemListDto> ItemsList { get; private set; }
     }
 }

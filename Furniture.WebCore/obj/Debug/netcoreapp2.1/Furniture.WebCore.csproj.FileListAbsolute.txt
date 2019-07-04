@@ -41,3 +41,5 @@ C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2
 C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2.1\Furniture.WebCore.csproj.CopyComplete
 C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2.1\Furniture.WebCore.dll
 C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2.1\Furniture.WebCore.pdb
+C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Items\Index.g.cshtml.cs
+C:\Users\Mohammad\source\repos\Furniture\Furniture.WebCore\obj\Debug\netcoreapp2.1\Razor\Views\Items\ChooseItems.g.cshtml.cs

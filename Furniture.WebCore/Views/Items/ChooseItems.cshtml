@@ -1,0 +1,55 @@
+﻿@model Furniture.Services.ItemServices.OrderLineItemDto
+
+@{
+    ViewData["Title"] = "ChooseItems";
+}
+
+<h2>ChooseItems</h2>
+
+<h4>ItemListDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="ChooseItems">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="@Model.SelectedItem.Name" class="control-label"></label>
+                <input asp-for="@Model.SelectedItem.Name" class="form-control" />
+                <span asp-validation-for="@Model.SelectedItem.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.SelectedItem.ItemColor" class="control-label"></label>
+                <input asp-for="@Model.SelectedItem.ItemColor" class="form-control" />
+                <span asp-validation-for="@Model.SelectedItem.ItemColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.SelectedItem.Price" class="control-label"></label>
+                <input asp-for="@Model.SelectedItem.Price" class="form-control" />
+                <span asp-validation-for="@Model.SelectedItem.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.SelectedItem.Width" class="control-label"></label>
+                <input asp-for="@Model.SelectedItem.Width" class="form-control" />
+                <span asp-validation-for="@Model.SelectedItem.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.SelectedItem.Height" class="control-label"></label>
+                <input asp-for="@Model.SelectedItem.Height" class="form-control" />
+                <span asp-validation-for="@Model.SelectedItem.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*@Html.ActionLink("Save", "ChooseItems", Model, new { @class = "btn btn-default" })*@
+                <input type="submit" name="name" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
